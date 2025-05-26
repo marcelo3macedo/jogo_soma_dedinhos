@@ -18,6 +18,8 @@ jobs:
           node-version: 20
 
       - name: Install and Build
+        env:
+          VITE_PUBLIC_URL: ${{ secrets.VITE_PUBLIC_URL }}
         run: |
           npm install
           npm run build
