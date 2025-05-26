@@ -17,12 +17,13 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install and Build
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build with public URL
         env:
-          VITE_PUBLIC_URL: ${{ secrets.VITE_PUBLIC_URL }}
-        run: |
-          npm install
-          npm run build
+          VITE_PUBLIC_URL: https://marcelo3macedo.github.io/jogo_soma_dedinhos/
+        run: npm run build
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3

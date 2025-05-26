@@ -3,7 +3,7 @@ import React from 'react';
 function QuestionDisplay({ num1, num2, operation }) {
     const getImageUrl = (num) => {
         const imageName = (num >= 0 && num <= 5) ? `${num}.jpg` : 'desconhecido.png'; // Crie um desconhecido.png se precisar
-        return `${import.meta.env.VITE_PUBLIC_URL}/assets/img/fingers/${imageName}`;
+        return `${import.meta.env.BASE_URL}/assets/img/fingers/${imageName}`;
     };
 
     return (

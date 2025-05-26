@@ -34,10 +34,13 @@ function App() {
     const errorAudioRef = useRef(null);
 
     useEffect(() => {
-        backgroundAudioRef.current = new Audio('/assets/audio/background.mp3');
+        const base = import.meta.env.BASE_URL;
+
+        backgroundAudioRef.current = new Audio(`${base}assets/audio/background.mp3`);
         backgroundAudioRef.current.loop = true;
-        correctAudioRef.current = new Audio('/assets/audio/acerto.mp3');
-        errorAudioRef.current = new Audio('/assets/audio/erro.mp3');
+
+        correctAudioRef.current = new Audio(`${base}assets/audio/acerto.mp3`);
+        errorAudioRef.current = new Audio(`${base}assets/audio/erro.mp3`);
     }, []);
 
     const playSound = useCallback((type) => {
